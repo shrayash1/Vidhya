@@ -12,6 +12,16 @@ public enum MovementState
     Moving,
     Attack
 }
+
+[System.Serializable]
+public enum FacingDirection
+{
+    Up,
+    Left,
+    Right,
+    Down
+}
+
 [System.Serializable]
 public class AnimationNames
 {
@@ -26,13 +36,15 @@ public class AnimationNames
 }
 public class MovementScript : MonoBehaviour
 {
+
     [SerializeField] private float moveSpeed = 0.5f;
-    
     [Header("References")]
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private LayerMask collideables;
-    
+
+    [SerializeField]
+    private FacingDirection facingDirection;
     private Vector3 targetPos;
     private bool isMoving = false;
     private float boxCastDistance = 0.45f;
@@ -67,6 +79,9 @@ public class MovementScript : MonoBehaviour
 
         if (movePos != Vector2.zero)
         {
+            //we update direction
+            SetDirection(movePos);
+
             animator.SetFloat("moveX",movePos.x);
             animator.SetFloat("moveY",movePos.y);
             targetPos = transform.position;
@@ -81,6 +96,26 @@ public class MovementScript : MonoBehaviour
         {
             animator.SetBool(IsBumping, true);
         }
+    }
+
+    //get direction
+    public FacingDirection GetPlayerDirection()
+    {
+        return facingDirection;
+    }
+
+
+    //set direction
+    void SetDirection(Vector2 dir)
+    {
+        //this logic needs work.. need to consult with aysh dai for the movement and sprite relation so that we can 
+        //determine the direction from the animation instead of input.... but he has donet he animation in weird way..
+        // me no understando
+
+        if (dir.x > 0) facingDirection = FacingDirection.Right;
+        if (dir.x < 0) facingDirection = FacingDirection.Left;
+        if (dir.y > 0) facingDirection = FacingDirection.Up;
+        if (dir.y < 0) facingDirection = FacingDirection.Down;
     }
 
     IEnumerator Move(Vector3 targetPosition)

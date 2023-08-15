@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_Follow: {fileID: 525643354}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 10
+    OrthographicSize: 6
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -1543,7 +1543,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1620,6 +1620,7 @@ GameObject:
   - component: {fileID: 525643356}
   - component: {fileID: 525643355}
   - component: {fileID: 525643357}
+  - component: {fileID: 525643358}
   m_Layer: 0
   m_Name: Vidhya
   m_TagString: Player
@@ -1656,10 +1657,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  animator: {fileID: 627263751}
   playerInput: {fileID: 525643356}
   collideables:
     serializedVersion: 2
     m_Bits: 64
+  facingDirection: 0
 --- !u!114 &525643356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1682,7 +1685,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525643352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b07bea0d235ab448175d6264a4f560, type: 3}
   m_Name: 
@@ -1695,6 +1698,22 @@ MonoBehaviour:
   targetposition: {fileID: 1003713108}
   plantSO: {fileID: 11400000, guid: 2833eeb60f2813d4792f347044858de4, type: 2}
   canInteract: 0
+--- !u!114 &525643358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525643352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9705e704a504594f8372f51d929c655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 525643356}
+  player: {fileID: 525643355}
+  plotLocation: {fileID: 0}
+  plantSO: {fileID: 11400000, guid: 2833eeb60f2813d4792f347044858de4, type: 2}
 --- !u!1 &627263748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,6 +3240,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8319788227020791679, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
   m_PrefabInstance: {fileID: 13652844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1019150406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019150408}
+  - component: {fileID: 1019150407}
+  m_Layer: 0
+  m_Name: PlotLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1019150407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019150406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9742ac5f8d995ac4db8d887e5b94ca45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1088937889}
+--- !u!4 &1019150408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019150406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8377587, y: 1.0680311, z: 0.050490007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088937886
 GameObject:
   m_ObjectHideFlags: 0
