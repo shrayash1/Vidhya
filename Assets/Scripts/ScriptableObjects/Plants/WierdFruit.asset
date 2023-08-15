@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc5a954c19ccef40ad0368e6681d7b6, type: 3}
+  m_Name: WierdFruit
+  m_EditorClassIdentifier: 
+  plantStages:
+  - {fileID: 411572252, guid: ba634b868f59046499a63858cf879ad5, type: 3}
+  - {fileID: 1580896721, guid: ba634b868f59046499a63858cf879ad5, type: 3}
+  - {fileID: 992424898, guid: ba634b868f59046499a63858cf879ad5, type: 3}
+  - {fileID: -913857947, guid: ba634b868f59046499a63858cf879ad5, type: 3}
