@@ -9,7 +9,7 @@ public class PlotLocations : MonoBehaviour
 
     public Tilemap tilemap;
 
-    //public List<Plots> activePlots;
+    public List<Plots> activePlotss;
 
     //WHEY DO i always forget to initiallize stuff..... fork this
     public Dictionary<Vector2Int, PlantingSpot> activePlots = new();
@@ -38,6 +38,8 @@ public class PlotLocations : MonoBehaviour
     void AddPlots(Plots plot)
     {
         activePlots.Add(plot.plotLocation, plot.plotObj);
+        activePlotss.Add(plot);
+        Debug.Log("Plot Added: ");
     }
 
     void RemovePlots(Plots plot)

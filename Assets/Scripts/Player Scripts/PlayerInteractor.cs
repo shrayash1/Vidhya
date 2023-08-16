@@ -50,7 +50,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.black;
-        Gizmos.DrawLine(transform.position,targetposition.transform.position);
+        //Gizmos.color = Color.black;
+        //Gizmos.DrawLine(transform.position,targetposition.transform.position);
     }
 }

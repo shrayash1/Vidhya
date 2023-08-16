@@ -11,9 +11,8 @@ public class PlantationInteractionHandler : MonoBehaviour
     [SerializeField] PlantSO plantSO;
     GameObject activeOverLay;
 
-
-    Tilemap activeTilemap => PlotLocations.currentTileMap;
-
+    [SerializeField]
+    Tilemap activeTilemap;
     //typecasting again
     Vector2Int playerGridPos => (Vector2Int) activeTilemap.WorldToCell(player.gameObject.transform.position);
      
@@ -28,35 +27,38 @@ public class PlantationInteractionHandler : MonoBehaviour
     private void Update()
     {
         //this is some weird stuff .. check late update for clarification
-        if(activeOverLay != null) { activeOverLay.SetActive(false); }
+       // if(activeOverLay != null) { activeOverLay.SetActive(false); }
 
     }
 
     private void LateUpdate()
     {
-        Vector2Int checkPosition = ReturnCheckPos();
-        if (plotLocation.activePlots.ContainsKey(checkPosition))
-        {
-            activeOverLay = plotLocation.activePlots[checkPosition].OverLay;
-        }
-        else
-        {
-            activeOverLay = null;
-        }
-        if (activeOverLay != null)
-        {
-            activeOverLay.SetActive(true);
-        }
+        //Vector2Int checkPosition = ReturnCheckPos();
+        //if (plotLocation.activePlots.ContainsKey(checkPosition) is true)
+        //{
+        //    activeOverLay = plotLocation.activePlots[checkPosition].OverLay;
+        //}
+        //else
+        //{
+        //    activeOverLay = null;
+        //}
+        //if (activeOverLay != null)
+        //{
+        //    activeOverLay.SetActive(true);
+        //}
     }
 
     void TryInteraction()
     {
+        Debug.Log("interaction");
+
 
         Vector2Int checkPosition = ReturnCheckPos();
 
         //if there is no platobj at check position... this logic is skipped
         if(plotLocation.activePlots.ContainsKey(checkPosition))
         {
+            Debug.Log("interaction");
             plotLocation.activePlots[checkPosition].Interact(plantSO);
         }
        

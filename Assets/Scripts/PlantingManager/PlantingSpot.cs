@@ -8,7 +8,7 @@ public class PlantingSpot : MonoBehaviour
 {
     public GameObject OverLay;
 
-    [SerializeField] private Tilemap activeTileMap => PlotLocations.currentTileMap;
+    [SerializeField] private Tilemap activeTileMap;
 
     Plots thisPlot;
 
