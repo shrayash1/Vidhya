@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 507887461}
     m_Modifications:
+    - target: {fileID: 4617877163912828417, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
+      propertyPath: activeTileMap
+      value: 
+      objectReference: {fileID: 1088937889}
     - target: {fileID: 6963831162656085633, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
       propertyPath: m_Name
       value: Spot1 (1)
@@ -1381,7 +1385,7 @@ Transform:
   m_Children:
   - {fileID: 822896600}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &418434933
 PrefabInstance:
@@ -1391,6 +1395,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 507887461}
     m_Modifications:
+    - target: {fileID: 4617877163912828417, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
+      propertyPath: activeTileMap
+      value: 
+      objectReference: {fileID: 1088937889}
     - target: {fileID: 6963831162656085633, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
       propertyPath: m_Name
       value: Spot1 (4)
@@ -1479,7 +1487,7 @@ Transform:
   - {fileID: 2141639102}
   - {fileID: 1648554316}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1642,7 +1650,7 @@ Transform:
   m_Children:
   - {fileID: 627263749}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &525643355
 MonoBehaviour:
@@ -1695,7 +1703,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
-  targetposition: {fileID: 1003713108}
+  targetposition: {fileID: 0}
   plantSO: {fileID: 11400000, guid: 2833eeb60f2813d4792f347044858de4, type: 2}
   canInteract: 0
 --- !u!114 &525643358
@@ -1712,8 +1720,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 525643356}
   player: {fileID: 525643355}
-  plotLocation: {fileID: 0}
+  plotLocation: {fileID: 1019150407}
   plantSO: {fileID: 11400000, guid: 2833eeb60f2813d4792f347044858de4, type: 2}
+  activeTilemap: {fileID: 1088937889}
 --- !u!1 &627263748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,6 +1837,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 507887461}
     m_Modifications:
+    - target: {fileID: 4617877163912828417, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
+      propertyPath: activeTileMap
+      value: 
+      objectReference: {fileID: 1088937889}
     - target: {fileID: 6963831162656085633, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
       propertyPath: m_Name
       value: Spot1 (2)
@@ -2143,6 +2156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 507887461}
     m_Modifications:
+    - target: {fileID: 4617877163912828417, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
+      propertyPath: activeTileMap
+      value: 
+      objectReference: {fileID: 1088937889}
     - target: {fileID: 6963831162656085633, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
       propertyPath: m_Name
       value: Spot1 (3)
@@ -3204,37 +3221,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1003713108
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1003713109}
-  m_Layer: 0
-  m_Name: asd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1003713109
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003713108}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2409034, y: 0.5864798, z: -0.012973978}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1004527743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8319788227020791679, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
@@ -3270,6 +3256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1088937889}
+  activePlotss: []
 --- !u!4 &1019150408
 Transform:
   m_ObjectHideFlags: 0
@@ -3283,7 +3270,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088937886
 GameObject:
@@ -124494,7 +124481,7 @@ Transform:
   - {fileID: 1919070935}
   - {fileID: 227000515}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1410313217
 PrefabInstance:
@@ -124504,6 +124491,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 507887461}
     m_Modifications:
+    - target: {fileID: 4617877163912828417, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
+      propertyPath: activeTileMap
+      value: 
+      objectReference: {fileID: 1088937889}
     - target: {fileID: 6963831162656085633, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
       propertyPath: m_Name
       value: Spot1 (5)
@@ -126289,6 +126280,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 507887461}
     m_Modifications:
+    - target: {fileID: 4617877163912828417, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
+      propertyPath: activeTileMap
+      value: 
+      objectReference: {fileID: 1088937889}
     - target: {fileID: 6963831162656085633, guid: 0f716ad2ebe389d4a936c7f34df643df, type: 3}
       propertyPath: m_Name
       value: Spot1

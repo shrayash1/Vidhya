@@ -1,19 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class PlantingSpot : MonoBehaviour
 {
     public GameObject OverLay;
 
-    [SerializeField] private Tilemap activeTileMap => PlotLocations.currentTileMap;
+    [SerializeField] private Tilemap activeTileMap;
 
     Plots thisPlot;
 
     //create an action for the spot spawnning message
-    public static event Action<Plots> onSpotSpawn;
+    public static event UnityAction<Plots> onSpotSpawn;
     public static event Action<Plots> onSpotDespawn;
 
     private void OnEnable()
