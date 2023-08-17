@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollectableHandler : MonoBehaviour
 {
     private MovementScript pMovement;
-    [SerializeField] [Range(0f, 30f)] private int inventorySize=15;
+    [SerializeField] [Range(0f, 32f)] private int inventorySize=15;
     public Inventory inventory;
     private void Awake()
     {
@@ -20,5 +20,17 @@ public class PlayerCollectableHandler : MonoBehaviour
             inventory.Add(collectable);
             Destroy(collectable.gameObject);
         }
+    }
+
+    public void DropItem(Collectable item)
+    {
+        Vector2 spawnLocation = transform.position;
+
+        float randX = Random.Range(-2f, 2f);
+        float randY = Random.Range(-2f, 2f);
+
+        Vector2 spawnOffset = new Vector2(randX, randY).normalized;
+
+        Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity);
     }
 }

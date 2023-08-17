@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Iventory_UI : MonoBehaviour
 {
-    public GameObject inventoryPanel,Slots;
+    public GameObject inventoryPanel,slotParent,slotPrefab;
     public PlayerCollectableHandler playerCollectables;
     public List<Slot_UI> slots = new List<Slot_UI>();
     private void Awake()
     {
-        AddSlotsFromParent(Slots);
+        //InstantiateSlots();
+        //AddSlotsFromParent(slotParent);
     }
     private void Update()
     {
@@ -20,10 +21,14 @@ public class Iventory_UI : MonoBehaviour
     }
     public void ToggleInventory()
     {
+        if(slots.Count != playerCollectables.inventory.slots.Count)
+        {
+            InstantiateSlots();
+        }
         if (!inventoryPanel.activeSelf)
         {
             inventoryPanel.SetActive(true);
-            Setup();
+            Refresh();
         }
         else
         {
@@ -31,7 +36,7 @@ public class Iventory_UI : MonoBehaviour
         }
     }
 
-    void Setup()
+    void Refresh()
     {
         if(slots.Count >= playerCollectables.inventory.slots.Count)
         {
@@ -41,6 +46,7 @@ public class Iventory_UI : MonoBehaviour
                 if (playerCollectables.inventory.slots[i].type != CollectableType.NONE)
                 {
                     slots[i].SetItem(playerCollectables.inventory.slots[i]);
+                    slots[i].GetItemIndex(i);
                 }
                 else
                 {
@@ -48,6 +54,25 @@ public class Iventory_UI : MonoBehaviour
                 }
             }
         }
+    }
+  
+    public void Remove(int slotID)
+    {
+        Collectable itemToDrop = GameManager.instance.itemManager.GetItemByType(playerCollectables.inventory.slots[slotID].type);
+        if (itemToDrop != null)
+        {
+            playerCollectables.DropItem(itemToDrop);
+            playerCollectables.inventory.Remove(slotID);
+            Refresh();
+        }
+    }
+    private void InstantiateSlots()
+    {
+        for(int i=0;i< playerCollectables.inventory.slots.Count; i++)
+        {
+            Instantiate(slotPrefab,slotParent.transform);
+        }
+        AddSlotsFromParent(slotParent);
     }
     private void AddSlotsFromParent(GameObject parent)
     {

@@ -137,7 +137,7 @@ public class MovementScript : MonoBehaviour
     }
     public GameObject ReturnCollectable(Vector3 targetPosition)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(targetPosition, boxCastSize, 0f, Vector2.zero, boxCastDistance, Collectable);
+        RaycastHit2D hit = Physics2D.BoxCast(targetPosition, boxCastSize, 0f, Vector2.zero, 0f, Collectable);
 
         if (hit.collider != null)
         {
