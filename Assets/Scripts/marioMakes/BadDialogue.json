@@ -1,0 +1,57 @@
+{
+    "parts": [
+       {
+           "ID":"START",
+           "text":"Heroooo everynyan!!" ,
+           "nextId":"part1"
+           ]
+       },
+       {
+        "ID":"part1",
+        "text":"How are you? Fine, Thank you.",
+        "responses": [
+            {
+                "text": "OH MY GAHH!!",
+                "ID":"part2"
+            }
+        ]
+        },
+    {
+        "ID":"part2",
+        "text":"I wish I were a bird",
+        "responses": [
+               {
+                   "text": "Naande aanta eggsabetoru?",
+                   "ID":"part3"
+                }
+    },
+    {
+        "ID":"part3",
+        "text":"Musumega American-e kuno desu?",
+        "responses": [
+               {
+                   "text": "Tori hat-tara?",
+                   "ID":"part4"
+                }
+    },  
+    {
+        "ID":"part4",
+        "text":"Tori dewa nai! wah hai wa neko de aru. neko de nakeruba, nanda toyuono da?",
+        "responses":[
+            {
+                "text":"Aanta no ka, naanka ni mitoru naa.... Mori.. jen sisyo",
+                "ID":"part5"
+            }
+        ]
+    },
+    {
+        "ID":"part5",
+        "text": "Gahhh!!! eeeee. eee. eeee",
+        "responses":[
+            {
+                "text":"ohhh! I am sorrry!"
+            }
+        ]
+    }
+    ]
+}
