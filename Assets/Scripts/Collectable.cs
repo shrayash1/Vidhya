@@ -2,21 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Item))]
 public class Collectable : MonoBehaviour
 {
-    public CollectableType type;
-    public Sprite icon;
+    [HideInInspector]public Item item;
     private void Awake()
     {
-        icon = GetComponent<SpriteRenderer>().sprite;
+        item = GetComponent<Item>();
     }
-}
-public enum CollectableType
-{
-    NONE,
-    PUMPKIN_SEED,
-    POTATO_SEED,
-    CARROT_SEED,
-    TOMATO_SEED,
-    CHILLY_SEED
 }

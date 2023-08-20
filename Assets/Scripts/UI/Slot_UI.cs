@@ -11,10 +11,15 @@ public class Slot_UI : MonoBehaviour
     public Button button;
     [SerializeField]Iventory_UI inventoryUI;
     [SerializeField] int ItemIndex;
+
+    [SerializeField] private GameObject highlight;
     private void Awake()
     {
         inventoryUI = FindAnyObjectByType<Iventory_UI>();
-        button.onClick.AddListener(RemoveItem);
+        if (button != null)
+        {
+            button.onClick.AddListener(RemoveItem);
+        }
     }
     void RemoveItem()
     {
@@ -38,5 +43,10 @@ public class Slot_UI : MonoBehaviour
         itemImage.sprite = null;
         itemImage.color = new Color(1, 1, 1, 0);
         quantityText.text = "";
+    }
+
+    public void SetHighLight(bool isOn)
+    {
+        highlight.SetActive(isOn);
     }
 }
