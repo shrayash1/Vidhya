@@ -26,7 +26,7 @@ public class PlayerInput : MonoBehaviour
     {
         gameInput = new GameInput();
         gameInput.Player.Enable();
-        currentLookDirection = LookDirection.Up;
+        currentLookDirection = LookDirection.Down;
         gameInput.Player.Interact.performed += GameInput_InteractionPerformed;
 
     }

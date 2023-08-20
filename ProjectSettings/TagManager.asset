@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -47,11 +48,11 @@ TagManager:
   - name: Ground
     uniqueID: 3824092117
     locked: 0
-  - name: Items&Objects
-    uniqueID: 100748939
-    locked: 0
   - name: Plants
     uniqueID: 711624889
+    locked: 0
+  - name: Items&Objects
+    uniqueID: 100748939
     locked: 0
   - name: Player
     uniqueID: 2988716107
